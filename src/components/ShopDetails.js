@@ -24,10 +24,10 @@ function ShopDetails({ coffees }){
             <img src={image_url} alt="coffee" width="55%" /> 
             <h1 className="shopDetails">{name}</h1>
                 <h2>{location}</h2>
- 
+            <button className="selections" onClick={() => setSelection(!selection)}>Coffee Selections</button>
+            {selection ? drinkList : null }
     
         </div>
     )
 }
-
 export default ShopDetails;

@@ -25,6 +25,16 @@ function AddShop({ shopAdded }){
             image: image,
             location: location,
         }
+        fetch("http://localhost:9292/shops", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newShop)
+        })
+            .then((r) => r.json())
+            .then(data => shopAdded(data))
+    }
 
 
     return(

@@ -18,6 +18,10 @@ function App() {
   function shopAdded(newShop) {
     setShops([...shops, newShop])
   }
+  function shopEdit(editShop){
+    setShops([...shops, editShop])
+  }
+
 
   return (
     <div>
@@ -26,6 +30,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/shops" element={<ShopContainer shopDelete={shopDelete} shops={shops}/>} />
           <Route exact path="/shops/new" element={<AddShop shopAdded={shopAdded} />} />
+          <Route exact path="/shops/:id/edit" element={<EditShop shopEdit={shopEdit}/>} />
         </Routes>
      
     </div>

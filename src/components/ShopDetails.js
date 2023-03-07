@@ -11,7 +11,8 @@ function ShopDetails({ coffees }){
         fetch(`http://localhost:9292/shops/${id}`)
             .then((r) => r.json())
             .then(data => setShop(data))
-    }, [])
+    }, [id])
+
     if (shop == null) {
         return (
             <h1>loading...</h1>

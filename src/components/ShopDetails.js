@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import CoffeeSelections from "./CoffeeSelections";
-
+import { useParams } from "react-router-dom";
 
 function ShopDetails({ coffees }){
     const [shop, setShop] = useState(null);
     const [selection, setSelection] = useState(false);
-
+    const {id} = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:9292/shops/${id}`)

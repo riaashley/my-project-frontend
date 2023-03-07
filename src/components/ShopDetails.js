@@ -17,7 +17,11 @@ function ShopDetails({ coffees }){
             <h1>loading...</h1>
         )
     }
-
+    const {name, image_url, location } = shop
+    let drinks = shop.coffees
+    let drinkList = drinks.map((drink) => 
+        <CoffeeSelections key={drink.id} drink={drink} />
+    )
 
     return(
         <div className="details">

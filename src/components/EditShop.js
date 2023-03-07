@@ -24,8 +24,17 @@ function EditShop({ shopEdit }){
         const update = {
             name: name,
             image: image,
-
+            location: location,
         }
+        fetch(`http://localhost:9292/shops/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(update)
+        })
+            .then((r) => r.json())
+            .then(data => shopEdit(data))
         
     }
 

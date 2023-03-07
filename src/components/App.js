@@ -12,12 +12,16 @@ function App() {
     .then(data => setShops(data))
   }, []);
 
+  function shopDelete(deleteShop){
+    setShops([...shops, deleteShop])
+  }
+
   return (
     <div>
        <NavBar />
        <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/shops" element={<ShopContainer shops={shops}/>} />
+          <Route exact path="/shops" element={<ShopContainer shopDelete={shopDelete} shops={shops}/>} />
         </Routes>
      
     </div>

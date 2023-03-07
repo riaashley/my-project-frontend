@@ -34,4 +34,5 @@ function ShopDetails({ coffees }){
         </div>
     )
 }
+
 export default ShopDetails;

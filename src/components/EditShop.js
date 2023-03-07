@@ -1,7 +1,8 @@
 import React, {useState} from "react";
+import { useParams } from "react-router-dom";
 
 function EditShop({ shopEdit }){
-
+    const {id} = useParams();
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
     const [location, setLocation] = useState("");
@@ -18,7 +19,6 @@ function EditShop({ shopEdit }){
         setLocation(e.target.value)
     }
 
-
     function handleSubmit(e) {
         e.preventDefault()
         const update = {
@@ -26,6 +26,7 @@ function EditShop({ shopEdit }){
             image: image,
             location: location,
         }
+        
         fetch(`http://localhost:9292/shops/${id}`, {
             method: "PATCH",
             headers: {
@@ -35,7 +36,6 @@ function EditShop({ shopEdit }){
         })
             .then((r) => r.json())
             .then(data => shopEdit(data))
-        
     }
 
     return(
@@ -57,6 +57,5 @@ function EditShop({ shopEdit }){
         </div>
     )
 }
-
 
 export default EditShop;

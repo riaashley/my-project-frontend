@@ -41,6 +41,7 @@ function AddShop({ shopAdded }){
             <label>Location</label><br></br>
                 <input type="text" onChange={handleLocationChange} value={location} />
                 <br></br>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )

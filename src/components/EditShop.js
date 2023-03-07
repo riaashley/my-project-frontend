@@ -4,7 +4,7 @@ function EditShop({ shopEdit }){
 
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
-
+    const [location, setLocation] = useState("");
 
     function handleNameChange(e){
         setName(e.target.value)
@@ -14,6 +14,9 @@ function EditShop({ shopEdit }){
         setImage(e.target.value)
     }
     
+    function handleLocationChange(e){
+        setLocation(e.target.value)
+    }
 
 
     function handleSubmit(e) {

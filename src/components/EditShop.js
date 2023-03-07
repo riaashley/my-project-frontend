@@ -42,7 +42,8 @@ function EditShop({ shopEdit }){
         <div>
            <h1 className="newShop_header">
                 Edit Shop
-
+               </h1><form className="add-activity" onSubmit={handleSubmit}>
+            <label>Business Name</label><br></br>
                 <input type="text" onChange={handleNameChange} value={name} />
             <br></br>
             <label>Image Link</label><br></br>
@@ -51,10 +52,11 @@ function EditShop({ shopEdit }){
             <label>Location</label><br></br>
                 <input type="text" onChange={handleLocationChange} value={location} />
                 <br></br>
-
+                <button type="submit">Submit</button>
             </form>
         </div>
     )
 }
+
 
 export default EditShop;
